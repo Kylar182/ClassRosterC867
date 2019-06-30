@@ -33,12 +33,12 @@
     <ClInclude Include="softwareStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="roster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="classRoster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="student.cpp">
@@ -52,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="softwareStudent.cpp">
       <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Roster.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

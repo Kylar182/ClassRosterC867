@@ -154,12 +154,13 @@
     <ClInclude Include="degree.h" />
     <ClInclude Include="networkStudent.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="roster.h" />
     <ClInclude Include="securityStudent.h" />
     <ClInclude Include="softwareStudent.h" />
     <ClInclude Include="student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="classRoster.cpp" />
+    <ClCompile Include="Roster.cpp" />
     <ClCompile Include="networkStudent.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

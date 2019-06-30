@@ -1,4 +1,5 @@
 #include <iostream>
+#include "degree.h"
 
 using namespace std;
 
@@ -51,11 +52,11 @@ void Student::setAge(int studentAge) {
 }
 
 //Days In Course
-int Student::getDaysInCourse() {
-	return daysInCourse;
+int Student::getDaysRemainingInCourse const () {
+	return daysRemainingInCourse;
 }
-void Student::setDaysInCourse() {
-	daysInCourse = 3;
+void Student::setDaysRemainingInCourse(int days) {
+	daysRemainingInCourse = days;
 	return;
 }
 
@@ -66,7 +67,6 @@ Degree Student::getDegreeName() const {
 void Student::setDegree(Degree degree) {
 	degreeName = degree;
 }
-
 
 
 void Student::print() {
@@ -89,19 +89,15 @@ void Student::print() {
 	}
 }
 
-Student::Student(string id, string fn, string ln, string email, int studentAge, int days, Degree degree) {
+
+Student::Student(string id, string fN, string lN, string email, int studentAge, int days, Degree degree) {
 	studentID = id;
-	firstName = fn;
-	lastName = ln;
+	firstName = fN;
+	lastName = lN;
 	emailAddress = email;
 	age = studentAge;
-	daysInCourse = 3;
+	daysRemainingInCourse = days;
 	degreeName = degree;
 }
 
 Student::~Student() {}
-
-
-Degree Student::getDegreeProgram() {
-	return Degree();
-}
