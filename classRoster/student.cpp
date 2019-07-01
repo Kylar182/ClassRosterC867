@@ -1,8 +1,9 @@
 #include <iostream>
 #include "degree.h"
+#include "student.h"
+#include <string>
 
 using namespace std;
-
 
 //Student ID
 string Student::getStudentID() const {
@@ -13,7 +14,6 @@ void Student::setStudentID(string id) {
 	return;
 }
 
-
 //First Name
 string Student::getFirstName() const {
 	return firstName;
@@ -22,7 +22,6 @@ void Student::setFirstName(string fN) {
 	firstName = fN;
 	return;
 }
-
 
 //Last Name
 string Student::getLastName() const {
@@ -52,11 +51,11 @@ void Student::setAge(int studentAge) {
 }
 
 //Days In Course
-int Student::getDaysRemainingInCourse const () {
+int* Student::getDaysRemainingInCourse() {
 	return daysRemainingInCourse;
 }
-void Student::setDaysRemainingInCourse(int days) {
-	daysRemainingInCourse = days;
+void Student::setDaysRemainingInCourse(int* days) {
+	/*daysRemainingInCourse = days;*/
 	return;
 }
 
@@ -69,13 +68,13 @@ void Student::setDegree(Degree degree) {
 }
 
 
-void Student::print() {
+void Student::Print() {
 
 	cout << "Student ID: " << studentID << endl;
 	cout << "First Name: " << firstName << endl;
 	cout << "Last Name: " << lastName << endl;
 	cout << "Age: " << age << endl;
-	cout << "Days in Course: " << daysInCourse << endl;
+	cout << "Days in Course: " << daysRemainingInCourse << endl;
 
 
 	if (getDegreeName() == 0) {
@@ -90,13 +89,15 @@ void Student::print() {
 }
 
 
-Student::Student(string id, string fN, string lN, string email, int studentAge, int days, Degree degree) {
+Student::Student(string id, string fN, string lN, string email, int studentAge, int* days, Degree degree) {
 	studentID = id;
 	firstName = fN;
 	lastName = lN;
 	emailAddress = email;
 	age = studentAge;
-	daysRemainingInCourse = days;
+	daysRemainingInCourse[0] = days[1];
+	daysRemainingInCourse[1] = days[2];
+	daysRemainingInCourse[2] = days[3];
 	degreeName = degree;
 }
 
