@@ -55,12 +55,14 @@ int* Student::getDaysRemainingInCourse() {
 	return daysRemainingInCourse;
 }
 void Student::setDaysRemainingInCourse(int* days) {
-	/*daysRemainingInCourse = days;*/
+	daysRemainingInCourse[0] = days[1];
+	daysRemainingInCourse[1] = days[2];
+	daysRemainingInCourse[2] = days[3];
 	return;
 }
 
 //Degree
-Degree Student::getDegreeName() const {
+Degree Student::getDegreeName(){
 	return Networking;
 }
 

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "networkStudent.h"
 
 using namespace std;
@@ -5,7 +6,6 @@ using namespace std;
 Degree NetworkStudent::getDegreeName() {
 	return degreeType;
 }
-
 
 void NetworkStudent::Print() {
 

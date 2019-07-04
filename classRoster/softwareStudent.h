@@ -2,6 +2,8 @@
 
 #include "student.h"
 
+using namespace std;
+
 class SoftwareStudent : public Student {
 
 private:
@@ -10,6 +12,9 @@ private:
 
 public:
 
-	virtual Degree getDegreeProgram();
-	using Student::Student;
+	Degree getDegreeName() override;
+
+	void Print() override;
+
+	SoftwareStudent(string id, string fN, string lN, string email, int studentAge, int* days);
 };

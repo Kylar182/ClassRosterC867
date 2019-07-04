@@ -1,6 +1,8 @@
 #pragma once
 #include "student.h"
 
+using namespace std;
+
 class NetworkStudent : public Student {
 
 private:
@@ -9,6 +11,10 @@ private:
 
 public:
 
-	virtual Degree getDegreeProgram();
-	using Student::Student;
+	Degree getDegreeName() override;
+
+	void Print() override;
+
+	NetworkStudent(string id, string fN, string lN, string email, int studentAge, int* days);
+
 };

@@ -2,6 +2,8 @@
 #include "degree.h"
 #include <string>
 
+using namespace std;
+
 class Student {
 	
 	private: 
@@ -43,7 +45,7 @@ class Student {
 		virtual void Print();
 
 		//Degree
-		virtual Degree getDegreeName() const;
+		virtual Degree getDegreeName();
 
 		Student(string id, string fN, string lN, string email, int studentAge, int* days);
 		~Student(){	}
