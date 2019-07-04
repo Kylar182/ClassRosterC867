@@ -11,7 +11,6 @@ class Student {
 		string emailAddress;
 		int age;
 		int daysRemainingInCourse[3];
-		Degree degreeName;
 
 	public:
 
@@ -41,12 +40,11 @@ class Student {
 		int* getDaysRemainingInCourse();
 		void setDaysRemainingInCourse(int* days);
 
-		void Print();
+		virtual void Print();
 
 		//Degree
-		Degree getDegreeName() const;
-		void setDegree(Degree degree);
+		virtual Degree getDegreeName() const;
 
-		Student(string id, string fN, string lN, string email, int studentAge, int* days, Degree degree);
+		Student(string id, string fN, string lN, string email, int studentAge, int* days);
 		~Student(){	}
 };

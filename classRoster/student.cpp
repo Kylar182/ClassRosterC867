@@ -61,35 +61,15 @@ void Student::setDaysRemainingInCourse(int* days) {
 
 //Degree
 Degree Student::getDegreeName() const {
-	return degreeName;
-}
-void Student::setDegree(Degree degree) {
-	degreeName = degree;
+	return Networking;
 }
 
 
 void Student::Print() {
-
-	cout << "Student ID: " << studentID << endl;
-	cout << "First Name: " << firstName << endl;
-	cout << "Last Name: " << lastName << endl;
-	cout << "Age: " << age << endl;
-	cout << "Days in Course: " << daysRemainingInCourse << endl;
-
-
-	if (getDegreeName() == 0) {
-		cout << "Network" << endl;
-	}
-	else if (getDegreeName() == 1) {
-		cout << "Security" << endl;
-	}
-	else if (getDegreeName() == 2) {
-		cout << "Software" << endl;
-	}
 }
 
 
-Student::Student(string id, string fN, string lN, string email, int studentAge, int* days, Degree degree) {
+Student::Student(string id, string fN, string lN, string email, int studentAge, int* days) {
 	studentID = id;
 	firstName = fN;
 	lastName = lN;
@@ -98,7 +78,6 @@ Student::Student(string id, string fN, string lN, string email, int studentAge, 
 	daysRemainingInCourse[0] = days[1];
 	daysRemainingInCourse[1] = days[2];
 	daysRemainingInCourse[2] = days[3];
-	degreeName = degree;
 }
 
 Student::~Student() {}
