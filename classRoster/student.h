@@ -39,7 +39,7 @@ class Student {
 		void setAge(int studentAge);
 
 		//Days Remaining In Course
-		int* getDaysRemainingInCourse();
+		int *getDaysRemainingInCourse();
 		void setDaysRemainingInCourse(int* days);
 
 		virtual void Print();
@@ -48,5 +48,5 @@ class Student {
 		virtual Degree getDegreeName();
 
 		Student(string id, string fN, string lN, string email, int studentAge, int* days);
-		~Student(){	}
+		~Student();
 };

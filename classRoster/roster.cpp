@@ -1,10 +1,8 @@
 // roster.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include "pch.h"
 #include <iostream>
 #include <sstream>
-#include <regex>
 #include "roster.h"
 
 using namespace std;
@@ -19,10 +17,10 @@ int main()
 
 	const string studentData[] =
 	{ "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
-	"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
-	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
-	"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-	"A5,Andrew,Beeman,abeema5@wgu.edu,34,25,32,27,SOFTWARE" 
+		"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
+		"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
+		"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
+		"A5,Andrew,Beeman,abeema5@wgu.edu,34,25,32,27,SOFTWARE" 
 	};
 
 	Roster* roster = new Roster();
@@ -51,12 +49,30 @@ int main()
 			degree = Software;
 		}
 
-		roster->add(ParsedStudent[0], ParsedStudent[1], ParsedStudent[2], ParsedStudent[3], stoi(ParsedStudent[4]), stoi(ParsedStudent[5]), stoi(ParsedStudent[6]), stoi(ParsedStudent[7]), degree);
-
+		roster->add(ParsedStudent[0], ParsedStudent[1], ParsedStudent[2], ParsedStudent[3], stoi(ParsedStudent[4]), stoi(ParsedStudent[5]), 
+			stoi(ParsedStudent[6]), stoi(ParsedStudent[7]), degree);
 	}
 
-	return 0;
+	roster->printAll();
+	roster->printInvalidEmails();
 
+	string studentId;
+
+	for (i = 0; i < 5; i++) {
+		studentId = "A" + to_string(i + 1);
+		roster->printDaysInCourse(studentId);
+	}
+	roster->printByDegreeProgram(Software);
+	roster->remove("A3");
+	roster->remove("A3");
+	roster->~Roster();
+
+
+	string quit;
+	cout << "Press any key to quit" << endl;
+	cin >> quit;
+
+	return 0;
 }
 
 
@@ -80,22 +96,83 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 void Roster::remove(string studentID)
 {
+	int studentToFind = 0;
+	for (int i = 0; i < 5; i++) {
+		if (classRosterArray[i]->getStudentID() == studentID) {
+			classRosterArray[i]->~Student();
+			studentToFind = 1;
+			classRosterArray[i] = 0;
+		}
+	}
+	if (studentToFind == 0) {
+		cout << "Student not found." << endl;
+	}
+	return;
 }
 
 void Roster::printAll()
 {
+	for (int i = 0; i < 5; i++) {
+		classRosterArray[i]->Print();
+	}
 }
 
 void Roster::printDaysInCourse(string studentID)
 {
+	int studentToFind = 0;
+	int tempSum = 0;
+	int j = 0;
+	for (int i = 0; i < 5; i++) {
+		if (classRosterArray[i]->getStudentID() == studentID) {
+
+			for (j = 0; j < 3; j++) {
+				tempSum += classRosterArray[i]->getDaysRemainingInCourse()[j];
+			}
+			
+			cout << classRosterArray[i]->getFirstName() 
+				<< " " << classRosterArray[i]->getLastName() 
+				<< "'s average days remaining in all their courses is " << tempSum / 3 << endl;
+
+			studentToFind = 1;
+		}
+	}
+	if (studentToFind == 0) {
+		cout << "Student not found." << endl;
+	}
+	return;
 }
 
 void Roster::printInvalidEmails()
 {
+	for (int i = 0; i < 5; ++i) {
+		string email = classRosterArray[i]->getEmail();
+		if ((email.find("@") == string::npos) or (email.find(".") 
+			== string::npos) or (email.find(" ") != string::npos)) {
+			cout << email << endl;
+		}
+	}
+	return;
 }
 
 void Roster::printByDegreeProgram(Degree degree)
 {
+	//Degree degree;
+	//if (intDegree == 0) {
+	//	degree == Networking;
+	//}
+	//else if (intDegree == 1) {
+	//	degree == Security;
+	//}
+	//else
+	//{
+	//	degree == Software;
+	//}
+	for (int i = 0; i < 5; ++i) {
+		Student *student = classRosterArray[i];
+		if (student->getDegreeName() == degree) {
+			student->Print();
+		}
+	}
 }
 
 Roster::Roster()

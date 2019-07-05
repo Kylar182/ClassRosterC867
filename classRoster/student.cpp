@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <iostream>
 #include "degree.h"
 #include "student.h"
@@ -51,7 +52,7 @@ void Student::setAge(int studentAge) {
 }
 
 //Days In Course
-int* Student::getDaysRemainingInCourse() {
+int *Student::getDaysRemainingInCourse() {
 	return daysRemainingInCourse;
 }
 void Student::setDaysRemainingInCourse(int* days) {

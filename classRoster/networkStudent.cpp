@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <iostream>
 #include "networkStudent.h"
 
@@ -9,11 +10,11 @@ Degree NetworkStudent::getDegreeName() {
 
 void NetworkStudent::Print() {
 
-	cout << "Student ID: " << getStudentID() << endl;
-	cout << "First Name: " << getFirstName() << endl;
-	cout << "Last Name: " << getLastName() << endl;
-	cout << "Age: " << getAge() << endl;
-	cout << "Days in Course: " << getDaysRemainingInCourse() << endl;
+	cout << "Student ID: " << getStudentID() << "\t";
+	cout << "First Name: " << getFirstName() << "\t";
+	cout << "Last Name: " << getLastName() << "\t";
+	cout << "Age: " << getAge() << "\t";
+	cout << "Days in Course: " << getDaysRemainingInCourse() << "\t";
 	cout << "Networking" << endl;
 }
 
