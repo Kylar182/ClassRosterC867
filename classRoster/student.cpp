@@ -78,9 +78,9 @@ Student::Student(string id, string fN, string lN, string email, int studentAge, 
 	lastName = lN;
 	emailAddress = email;
 	age = studentAge;
-	daysRemainingInCourse[0] = days[1];
-	daysRemainingInCourse[1] = days[2];
-	daysRemainingInCourse[2] = days[3];
+	daysRemainingInCourse[0] = days[0];
+	daysRemainingInCourse[1] = days[1];
+	daysRemainingInCourse[2] = days[2];
 }
 
 Student::~Student() {}
