@@ -69,7 +69,7 @@ int main()
 
 
 	string quit;
-	cout << "Press any key to quit" << endl;
+	cout << "Press any key followed by the Enter key to quit" << endl;
 	cin >> quit;
 
 	return 0;
