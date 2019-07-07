@@ -9,12 +9,7 @@ Degree SoftwareStudent::getDegreeName() {
 }
 
 void SoftwareStudent::Print() {
-
-	cout << "Student ID: " << getStudentID() << "\t";
-	cout << "First Name: " << getFirstName() << "\t";
-	cout << "Last Name: " << getLastName() << "\t";
-	cout << "Age: " << getAge() << "\t";
-	cout << "Days in Course: " << getDaysRemainingInCourse()[0] << ", " << getDaysRemainingInCourse()[1] << ", " << getDaysRemainingInCourse()[2] << "\t";
+	Student::Print();
 	cout << "Software" << endl;
 }
 

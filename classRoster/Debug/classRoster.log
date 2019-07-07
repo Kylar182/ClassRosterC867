@@ -1,2 +1,6 @@
-﻿  Roster.cpp
+﻿  networkStudent.cpp
+  securityStudent.cpp
+  softwareStudent.cpp
+  student.cpp
+  Generating Code...
   classRoster.vcxproj -> C:\Users\Andrew\source\repos\ClassRosterC867\Debug\classRoster.exe
